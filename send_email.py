@@ -1,16 +1,14 @@
 import smtplib, ssl
+import os
+def send_mail(message):
+    host = "smtp.mail.yahoo.com"
+    port = 465
+    username = "alexlsouthall@yahoo.com"
+    password = os.getenv("PyPass")
+    password1 = password
+    receiver= "alexlsouthall@yahoo.com"
+    contexti = ssl.create_default_context()
 
-
-host = "smtp.mail.yahoo.com"
-port = 465
-username = "alexlsouthall@yahoo.com"
-password = "jjzvtcbtjjxvqbix"
-receiver= "allalexandersouth@gmail.com"
-message = """\
-Subject: Tesst
-testest"""
-context = ssl.create_default_context()
-
-with smtplib.SMTP_SSL(host, port, context=context) as server:
-    server.login(username, password)
-    server.sendmail(username, receiver, message)
+    with smtplib.SMTP_SSL(host, port, context=contexti) as server:
+        server.login(username, password1)
+        server.sendmail(username, receiver, message)
