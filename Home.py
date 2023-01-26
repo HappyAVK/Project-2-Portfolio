@@ -14,6 +14,7 @@ with col1:
 
 
 match select_boxes:
+
     case "Contact via Email":
         from send_email import send_mail
 
