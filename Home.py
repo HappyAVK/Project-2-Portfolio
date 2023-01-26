@@ -41,9 +41,11 @@ match select_box:
         st.subheader("If any of these apps interest you, feel free to contact me about them!")
         df = pandas.read_csv("new_data.csv", sep=";")
         col3, col4, col5 = st.columns([1.5, 0.5, 1.5])
+        available_projects = df.loc[df["State"]=="Yes"]
+        index = int(len(available_projects)/2)
 
         with col3:
-            for index, row in df[:10].iterrows():
+            for index, row in available_projects[:index].iterrows():
                 if row["State"] == "Yes":
                     st.header(row["title"])
                     st.write(row["description"])
@@ -51,7 +53,7 @@ match select_box:
                     st.write(f"[Github Repo]({row['url']})")
 
         with col5:
-            for index, row in df[10:].iterrows():
+            for index, row in df[index+1:].iterrows():
                 if row["State"]=="Yes":
                     st.header(row["title"])
                     st.write(row["description"])
