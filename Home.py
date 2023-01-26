@@ -9,11 +9,11 @@ with col1:
 
     st.image("images/thumbnail.png", width=300)
 
-    select_boxes = st.selectbox(label="Page Selection", options=["About", "Programming Projects", "Contact via Email"])
+    boxes = st.selectbox(label="Page Selection", options=["About", "Programming Projects", "Contact via Email"])
 
 
 
-match select_boxes:
+match boxes:
 
     case "Contact via Email":
         from send_email import send_mail
