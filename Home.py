@@ -1,6 +1,5 @@
 import streamlit as st
-import pandas
-
+from Grab_Google_Sheet import get_df
 st.set_page_config(layout="wide")
 col0, col1, col2 = st.columns(3)
 
@@ -39,26 +38,26 @@ match select_box:
     case "Programming Projects":
 
         st.subheader("If any of these apps interest you, feel free to contact me about them!")
-        df = pandas.read_csv("new_data.csv", sep=";")
+        df = get_df()
         col3, col4, col5 = st.columns([1.5, 0.5, 1.5])
         available_projects = df.loc[df["State"]=="Yes"]
         index = int(len(available_projects)/2)
 
         with col3:
             for index, row in available_projects[:index].iterrows():
-                if row["State"] == "Yes":
-                    st.header(row["title"])
-                    st.write(row["description"])
-                    st.image("images/" + row["image"], width=200)
-                    st.write(f"[Github Repo]({row['url']})")
+
+                st.header(row["title"])
+                st.write(row["description"])
+                st.image("images/" + row["image"], width=200)
+                st.write(f"[Github Repo]({row['url']})")
 
         with col5:
-            for index, row in df[index+1:].iterrows():
-                if row["State"]=="Yes":
-                    st.header(row["title"])
-                    st.write(row["description"])
-                    st.image("images/" + row["image"], width=200)
-                    st.write(f"[Github Repo]({row['url']})")
+            for index, row in available_projects[index+1:].iterrows():
+
+                st.header(row["title"])
+                st.write(row["description"])
+                st.image("images/" + row["image"], width=200)
+                st.write(f"[Github Repo]({row['url']})")
     case "About":
         col4, col5, col6 = st.columns(3)
         with col5:
