@@ -1,9 +1,9 @@
 import smtplib, ssl
 from streamlit import secrets
 def send_mail(message):
-    host = "smtp.mail.yahoo.com"
+    host = "smtp.gmail.com"
     port = 465
-    username = "alexlsouthall@yahoo.com"
+    username = "asoutavk@gmail.com"
     password1 = secrets["key"]
     receiver= "alexlsouthall@yahoo.com"
     contexti = ssl.create_default_context()
