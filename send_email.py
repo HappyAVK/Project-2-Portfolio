@@ -1,11 +1,10 @@
 import smtplib, ssl
-import os
+from streamlit import secrets
 def send_mail(message):
     host = "smtp.mail.yahoo.com"
     port = 465
     username = "alexlsouthall@yahoo.com"
-    password = os.getenv("PyPass")
-    password1 = password
+    password1 = secrets["key"]
     receiver= "alexlsouthall@yahoo.com"
     contexti = ssl.create_default_context()
 
