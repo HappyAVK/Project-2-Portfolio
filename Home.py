@@ -26,7 +26,7 @@ match boxes:
             user_email = st.text_input("Enter your Email")
             raw_message = st.text_area("Your Message")
             message = f"""\
-        Subject:{user_email}
+        
 
         From: {user_email} 
         {raw_message}
