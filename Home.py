@@ -62,6 +62,11 @@ match boxes:
     case "About":
         col4, col5, col6 = st.columns(3)
         with col5:
-            st.write("Hi Im Alexander Southall I am a 2021 Graduate from the University of Greenwich in Games Design & Development, here you will find some Python projects I've implemented to develop my skills, please take a look and I would love to hear some feedback, thanks!")
+            st.write("Hi Im Alexander Southall I am a 2021 Graduate from the University of Greenwich in Games Design & Development,"
+                     "After graduating I have spent some time considering my path for the future, and though I focused on the design aspect of"
+                     "Games, I do not believe it was for me."
+                     "Here you will find some Python projects I've implemented to develop my skills. My aim is to look at a range of topics"
+                     "and applications to find the disipline of coding that suits me,"
+                     " please take a look and I would love to hear some feedback, thanks!")
 
 
