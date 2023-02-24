@@ -1,4 +1,5 @@
 title;description;url;image;State
+Chess Game;A Chess Game made from scratch using the Library;https://github.com/HappyAVK/Chess-Game;chess test.png;Yes
 Art Prompt App;A distraction-free web app to create a dynamic list of prompts for an Art Project.;https://github.com/HappyAVK/ArtPrompts;1.png;Yes
 Portfolio Website;A website built entirely in Python to showcase coding projects and apps.;https://github.com/HappyAVK/Project-2-Portfolio;2.png;Yes
 PDF Templates;A script that generates PDF templates of multiple pages given some predefined guidelines.;https://github.com/HappyAVK/Project-3-PDF;3.png;Yes
